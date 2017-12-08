@@ -1,6 +1,6 @@
 {
   "name": "@innotec/ngx-webpack-module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~5.1.0",

@@ -64,7 +64,9 @@ function createTag(tagName, attrMap, publicPath) {
           /**
            * Remove a starting trailing slash if the value has one so we wont have //
            */
-          value = publicPath + (value[0] === '/' ? value.substr(1) : value);
+          if (value.indexOf('http') === -1) {
+            value = publicPath + (value[0] === '/' ? value.substr(1) : value);
+          }
         }
       }
 
