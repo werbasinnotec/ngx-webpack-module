@@ -264,12 +264,13 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/configuration.html#devserver
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
-  config.devServer = {
-    contentBase: './src/public',
-    historyApiFallback: true,
-    quiet: true,
-    stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
-  };
+   config.devServer = {
+     contentBase: './src/public',
+     historyApiFallback: true,
+     quiet: true,
+     disableHostCheck: true,
+     stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
+   };
 
   return config;
 }();
