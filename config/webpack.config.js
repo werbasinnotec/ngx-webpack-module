@@ -265,6 +265,9 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
    config.devServer = {
+     headers: {
+       'Access-Control-Allow-Origin': '*'
+     },
      contentBase: './src/public',
      historyApiFallback: true,
      quiet: true,
