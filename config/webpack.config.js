@@ -113,23 +113,15 @@ module.exports = function makeWebpackConfig() {
       // use 'null' loader in test mode (https://github.com/webpack/null-loader)
       // all css in src/style will be bundled in an external css file
       {
-        test: /\.css$/,
-        exclude: root('src', 'app'),
-        loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader', 'postcss-loader']})
-      },
+          test: /\.css$/,
+          use: ['to-string-loader', 'css-loader']
+        },
+        {
+          test: /\.(scss|sass)$/,
+          loader: 'raw-loader!postcss-loader!sass-loader'
+        },
       // all css required in src/app files will be merged in js files
-      {test: /\.css$/, include: root('src', 'app'), loader: 'raw-loader!postcss-loader'},
 
-      // support for .scss files
-      // use 'null' loader in test mode (https://github.com/webpack/null-loader)
-      // all css in src/style will be bundled in an external css file
-      {
-        test: /\.(scss|sass)$/,
-        exclude: root('src', 'app'),
-        loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader', 'postcss-loader', 'sass-loader']})
-      },
-      // all css required in src/app files will be merged in js files
-      {test: /\.(scss|sass)$/, exclude: root('src', 'style'), loader: 'raw-loader!postcss-loader!sass-loader'},
 
       // support for .html as raw text
       // todo: change the loader to something that adds a hash to images
@@ -180,7 +172,7 @@ module.exports = function makeWebpackConfig() {
     ),
 
     new HtmlElementsPlugin({
-        headTags: require('./head-config.common')
+        headTags: require(path.resolve('./config/head-config.common'))
       }),
 
     // Tslint configuration for webpack 2
