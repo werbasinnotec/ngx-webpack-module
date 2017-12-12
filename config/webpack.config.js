@@ -10,6 +10,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlElementsPlugin = require('./html-elements-plugin');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 /**
  * Env
@@ -249,7 +250,33 @@ module.exports = function makeWebpackConfig() {
 
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
       // Minify all javascript, switch loaders to minimizing mode
-      new webpack.optimize.UglifyJsPlugin({sourceMap: true, mangle: { keep_fnames: true }}),
+      // new webpack.optimize.UglifyJsPlugin({sourceMap: true, mangle: { keep_fnames: true }}),
+
+      new webpack.optimize.UglifyJsPlugin({
+        mangle: true,
+      	compress: {
+      		sequences: true,
+      		dead_code: true,
+      		conditionals: true,
+      		booleans: true,
+      		unused: true,
+      		if_return: true,
+      		join_vars: true,
+      		drop_console: true,
+          warnings: false
+      	},
+          output: {
+              comments: false
+          },
+          sourceMap: false
+        }),
+      new CompressionPlugin({
+          asset: "[path].gz[query]",
+          algorithm: "gzip",
+          test: /\.js$|\.html$/,
+          threshold: 10240,
+          minRatio: 0.8
+      }),
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
