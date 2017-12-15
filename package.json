@@ -1,6 +1,6 @@
 {
   "name": "@innotec/ngx-webpack-module",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "dependencies": {
     "@angular/cdk": "5.0.1",
@@ -20,7 +20,7 @@
     "autoprefixer": "^7.2.1",
     "awesome-typescript-loader": "^3.1.2",
     "codelyzer": "4.0.2",
-    "compression-webpack-plugin": "1.0.1",
+    "compression-webpack-plugin": "1.1.2",
     "copy-webpack-plugin": "^4.0.0",
     "core-js": "^2.4.1",
     "css-loader": "^0.28.4",
@@ -40,7 +40,7 @@
     "karma-mocha-reporter": "^2.0.3",
     "karma-remap-istanbul": "0.6.0",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "2.0.6",
+    "karma-webpack": "2.0.9",
     "node-sass": "^4.5.0",
     "null-loader": "0.1.1",
     "postcss-loader": "^2.0.9",
