@@ -1,6 +1,6 @@
 {
   "name": "@innotec/ngx-webpack-module",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "license": "MIT",
   "dependencies": {
     "@angular/cdk": "^5.2.4",
@@ -63,6 +63,6 @@
     "url-loader": "^0.6.2",
     "webpack": "3.10.0",
     "webpack-dev-server": "2.11.0",
-    "zone.js": "^0.8.10"
+    "zone.js": "^0.8.20"
   }
 }
