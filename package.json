@@ -1,6 +1,6 @@
 {
   "name": "@innotec/ngx-webpack-module",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "license": "MIT",
   "dependencies": {
     "@angular/cdk": "^6.2.1",
@@ -19,7 +19,7 @@
     "@types/selenium-webdriver": "3.0.9",
     "angular2-template-loader": "^0.6.0",
     "autoprefixer": "^8.1.0",
-    "awesome-typescript-loader": "^5.0.0",
+    "awesome-typescript-loader": "^4.0.1",
     "codelyzer": "4.3.0",
     "compression-webpack-plugin": "1.1.11",
     "copy-webpack-plugin": "^4.0.0",
@@ -52,9 +52,9 @@
     "remap-istanbul": "^0.11.0",
     "rimraf": "^2.5.1",
     "rxjs": "^6.2.0",
-    "sass-loader": "^7.0.3",
+    "sass-loader": "^6.0.1",
     "shelljs": "^0.8.0",
-    "style-loader": "^0.21.0",
+    "style-loader": "^0.20.3",
     "ts-helpers": "^1.1.1",
     "tslib": "^1.7.1",
     "tslint": "^5.8.0",
